@@ -1,14 +1,21 @@
 package Aplicacao;
-import java.util.InputMismatchException;
+import Entidades.Bebida;
+import Entidades.Revista;
+import Entidades.Doce;
 import java.util.Scanner;
+
 
 public class Main {
 
     public static void main(String[] args){
 
         Scanner sc = new Scanner(System.in);
-        int escolha;
-        Boolean ativa;
+        int escolha = 0;
+        boolean ativa;
+
+        Revista revista = new Revista(1,"Ciencias","Recreio");
+        Bebida bebida = new Bebida(2,"Tubaina","Refrigerante");
+        Doce doce = new Doce(3,"Bala","7Belo");
 
         System.out.println("" +
                 "Bem vindo(a) à Banca.\n" +
@@ -17,19 +24,77 @@ public class Main {
                 "[1] Consultar estoque\n" +
                 "[2] Adicionar produto\n" +
                 "[3] Operar estoque");
-        ativa = true;
+
         while(true) {
-            try {
-                escolha = sc.nextInt();
-            } catch (InputMismatchException e) {
-                System.out.println("Digite um número");
-                ativa = false;
-            }
+            ativa = true;
+            escolha = sc.nextInt();
+
+            if(ativa) {
+                switch (escolha) {
+                    case 1:
+                        consultarEstoque(revista,bebida,doce);
+                        break;
+                    case 2:
+                        adicionarProduto(revista,bebida,doce);
+                        break;
+                    case 3:
+                        operarEstoque(revista,bebida,doce);
+                        break;
+                    default:
+                        System.out.println("Opção indisponível.");
+                        ativa = false;
+                } // end switch escolha
+            } // end if ativa
             if(ativa){break;}
-        }
+        } // end while
+
+    }
+
+    public static void consultarEstoque(Revista revista, Bebida bebida, Doce doce){
+
+        Scanner sc = new Scanner(System.in);
+        int escolha = 0;
+        boolean ativa;
+
+        System.out.println("" +
+                "Escolha o tipo de produto:" +
+                "[1] Revistas" +
+                "[2] Bebidas" +
+                "[3] Doces");
+
+
+        while(true) {
+            ativa = true;
+            escolha = sc.nextInt();
+
+            if(ativa) {
+                switch (escolha) {
+
+                    case 1:
+
+                    case 2:
+                        bebida.getEstoque();
+                    case 3:
+                    default:
+                        System.out.println("Opção indisponível.");
+                        ativa = false;
+                } // end switch escolha
+            } // end if ativa
+            if(ativa){break;}
+        } // end while
+
 
 
 
     }
+
+    public static void adicionarProduto(Revista revista, Bebida bebida, Doce doce){
+
+    }
+
+    public static void operarEstoque(Revista revista, Bebida bebida, Doce doce){
+
+    }
+
 
 }
