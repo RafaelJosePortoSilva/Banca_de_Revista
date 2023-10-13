@@ -1,13 +1,13 @@
 package Entidades;
 
-public class Produto {
+public abstract class Produto {
 
     private int codigo;
     private String nome;
     private int estoque;
     private double valorUnitario;
 
-    public abstract Produto(int codigo, String nome) {
+    public Produto(int codigo, String nome) {
 
         this.codigo = codigo;
         this.nome = nome;

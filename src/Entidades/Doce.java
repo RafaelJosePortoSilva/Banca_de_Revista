@@ -1,6 +1,5 @@
 package Entidades;
 
-import java.security.SecureRandom;
 
 public class Doce extends Produto{
 
