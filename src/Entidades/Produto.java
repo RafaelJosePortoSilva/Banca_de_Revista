@@ -7,7 +7,7 @@ public class Produto {
     private int estoque;
     private double valorUnitario;
 
-    public Produto(int codigo, String nome) {
+    public abstract Produto(int codigo, String nome) {
 
         this.codigo = codigo;
         this.nome = nome;
@@ -38,5 +38,18 @@ public class Produto {
         this.valorUnitario = valorUnitario;
     }
 
+    // Metodos
 
+    public void incluirEstoque(int quantidade){
+        estoque += quantidade;
+    }
+
+    public void tirarEstoque(int quantidade){
+        if (quantidade <= estoque){
+            estoque -= quantidade;
+        } else{
+            System.out.println("Estoque indisponível");
+        }
+
+    }
 }
