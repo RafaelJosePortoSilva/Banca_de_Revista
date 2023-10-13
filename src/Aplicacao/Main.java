@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args){
 
         Scanner sc = new Scanner(System.in);
-        int escolha = 0;
+        int escolha;
         boolean ativa;
 
         Revista revista = new Revista(1,"Ciencias","Recreio");
@@ -53,8 +53,9 @@ public class Main {
     public static void consultarEstoque(Revista revista, Bebida bebida, Doce doce){
 
         Scanner sc = new Scanner(System.in);
-        int escolha = 0;
+        int escolha;
         boolean ativa;
+        int print = 0;
 
         System.out.println("" +
                 "Escolha o tipo de produto:" +
@@ -71,10 +72,14 @@ public class Main {
                 switch (escolha) {
 
                     case 1:
-
+                        System.out.println( revista.getEstoque());
+                        break;
                     case 2:
-                        bebida.getEstoque();
+                        System.out.println( bebida.getEstoque());
+                        break;
                     case 3:
+                        System.out.println( doce.getEstoque());
+                        break;
                     default:
                         System.out.println("Opção indisponível.");
                         ativa = false;

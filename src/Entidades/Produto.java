@@ -38,6 +38,10 @@ public abstract class Produto {
         this.valorUnitario = valorUnitario;
     }
 
+    public int getEstoque(){
+        return estoque;
+    }
+
     // Metodos
 
     public void incluirEstoque(int quantidade){
