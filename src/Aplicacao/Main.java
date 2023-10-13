@@ -55,7 +55,6 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int escolha;
         boolean ativa;
-        int print = 0;
 
         System.out.println("" +
                 "Escolha o tipo de produto:" +
@@ -94,6 +93,60 @@ public class Main {
     }
 
     public static void adicionarProduto(Revista revista, Bebida bebida, Doce doce){
+
+        Scanner sc = new Scanner(System.in);
+        int escolha,cod;
+        boolean ativa;
+        String tipo,nome;
+        Bebida bebida1;
+        Revista revista1;
+        Doce doce1;
+
+
+        System.out.println("" +
+                "Escolha o tipo de produto:" +
+                "[1] Revistas" +
+                "[2] Bebidas" +
+                "[3] Doces");
+
+
+        while(true) {
+            ativa = true;
+            escolha = sc.nextInt();
+
+            System.out.println("Escolha o nome: ");
+            nome = sc.next();
+            System.out.println("Escolha o nome: ");
+            cod = sc.nextInt();
+
+
+            if(ativa) {
+                switch (escolha) {
+
+                    case 1:
+                        System.out.println("Escolha o editora:");
+                        tipo = sc.next();
+                        revista1 = new Revista(cod,nome,tipo);
+                        break;
+                    case 2:
+                        System.out.println("Escolha o tipo:");
+                        tipo = sc.next();
+                        bebida1 = new Bebida(cod,nome,tipo);
+                        break;
+                    case 3:
+                        System.out.println("Escolha a marca:");
+                        tipo = sc.next();
+                        doce1 = new Doce(cod,nome,tipo);
+                        break;
+                    default:
+                        System.out.println("Opção indisponível.");
+                        ativa = false;
+                } // end switch escolha
+            } // end if ativa
+            if(ativa){break;}
+        } // end while
+
+
 
     }
 
